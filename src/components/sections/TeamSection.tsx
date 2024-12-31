@@ -1,42 +1,77 @@
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { Dribbble, Github, Linkedin } from "lucide-react";
+import Link from "next/link";
+
+export const TeamData = () => [
+ {
+  name: "Name",
+  role: "Role",
+  description: "Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.",
+  socials: [{ icon: Github, link: "#", }, { icon: Linkedin, link: "#", }, { icon: Dribbble, link: "#", },],
+  image: { src: "", alt: "" },
+ },
+ {
+  name: "Name",
+  role: "Role",
+  description: "Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.",
+  socials: [{ icon: Github, link: "#", }, { icon: Linkedin, link: "#", }, { icon: Dribbble, link: "#", },],
+  image: { src: "", alt: "" },
+ },
+ {
+  name: "Name",
+  role: "Role",
+  description: "Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.",
+  socials: [{ icon: Github, link: "#", }, { icon: Linkedin, link: "#", }, { icon: Dribbble, link: "#", },],
+  image: { src: "", alt: "" },
+ },
+ {
+  name: "Name",
+  role: "Role",
+  description: "Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.",
+  socials: [{ icon: Github, link: "#", }, { icon: Linkedin, link: "#", }, { icon: Dribbble, link: "#", },],
+  image: { src: "", alt: "" },
+ }
+]
+
 
 export default function TeamSection() {
- const testimonials = [
-  {
-   quote:
-    "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-   name: "Sarah Chen",
-   designation: "Product Manager at TechFlow",
-   src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-   quote:
-    "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-   name: "Michael Rodriguez",
-   designation: "CTO at InnovateSphere",
-   src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-   quote:
-    "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-   name: "Emily Watson",
-   designation: "Operations Director at CloudScale",
-   src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-   quote:
-    "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-   name: "James Kim",
-   designation: "Engineering Lead at DataPro",
-   src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-   quote:
-    "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-   name: "Lisa Thompson",
-   designation: "VP of Technology at FutureNet",
-   src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
- ];
- return <AnimatedTestimonials testimonials={testimonials} />;
+ return (
+  <section className="py-32">
+   <div className="container flex flex-col items-start text-left">
+    <p className="semibold">We're hiring</p>
+    <h2 className="my-6 text-pretty text-2xl font-bold lg:text-4xl">Meet our team</h2>
+    <p className="mb-8 max-w-3xl text-muted-foreground lg:text-xl">
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.
+    </p>
+   </div>
+   <div className="container mt-16 grid gap-x-12 gap-y-8 lg:grid-cols-2">
+    {
+     TeamData().map((member, index) => (
+      <div className="flex flex-col sm:flex-row">
+       <div className="mb-4 aspect-square w-full shrink-0 overflow-clip bg-accent sm:mb-0 sm:mr-5 sm:size-48"></div>
+       <div className="flex flex-1 flex-col items-start">
+        <p className="w-full text-left font-medium">
+         {member?.name || "Name"}
+        </p>
+        <p className="w-full text-left text-muted-foreground">
+         {member?.role || "Role"}
+        </p>
+        <p className="w-full py-2 text-sm text-muted-foreground">
+         {member?.description || "Description"}
+        </p>
+        <div className="my-2 flex items-start gap-4">
+         {
+          member?.socials?.map((social, index) => (
+           <Link href={social?.link || "#"} key={index}>
+            {social?.icon && <social.icon size={24} className="size-4 text-muted-foreground" />}
+           </Link>
+          ))
+         }
+        </div>
+       </div>
+      </div>
+     ))
+    }
+   </div>
+  </section>
+ );
 }

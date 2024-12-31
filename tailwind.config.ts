@@ -17,16 +17,19 @@ const config: Config = {
 		},
 	},
 	theme: {
-		container: {
-			center: true,
-			padding: {
-				DEFAULT: '1rem',
-				sm: '1rem',
-				lg: '2rem',
-				xl: '3rem',
-				'2xl': '5rem'
-			}
-		},
+	container: {
+				center: true,
+				padding: {
+					DEFAULT: '1rem',
+					md: '2rem',
+					lg: '4rem'
+				}
+			},
+			screens: {
+						sm: '375px',
+						md: '768px',
+						lg: '1200px'
+					},
 		extend: {
 			colors: {
 				background: 'hsl(var(--background))',

@@ -2,11 +2,10 @@
 
 export default function HeroSection() {
   return (
-    <section className="py-32">
-      <div className="container relative mx-auto">
+    <section className="py-24">
+      <div className="container relative mx-auto min-h-[700px] flex justify-center items-center flex-col">
         {/* Background grid */}
         <div className="absolute inset-0 -z-10 mx-auto h-full w-full max-w-3xl bg-[linear-gradient(to_right,hsl(var(--muted))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--muted))_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_50%_100%_at_50%_50%,#000_60%,transparent_100%)]"></div>
-
         {/* Heading */}
         <h1 className="relative mx-auto mb-8 max-w-3xl text-center text-4xl font-semibold md:mb-10 md:text-6xl md:leading-snug flex-wrap">
           <span>
@@ -126,4 +125,3 @@ export default function HeroSection() {
     </section>
   );
 };
-

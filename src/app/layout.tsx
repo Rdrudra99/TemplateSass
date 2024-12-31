@@ -2,6 +2,8 @@ import { Analytics } from "@vercel/analytics/react";
 import classNames from "classnames";
 import type { Metadata } from "next";
 import "./globals.css";
+import HeaderSection from "@/components/sections/HeaderSection";
+import FooterSection from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
   title: "NextJs 15",
@@ -35,8 +37,11 @@ export default function RootLayout({
         className={classNames("antialiased", {
           "debug-screens": process.env.NODE_ENV === "development",
         })}
+        suppressHydrationWarning
       >
+        <HeaderSection />
         {children}
+        <FooterSection />
         <Analytics />
       </body>
     </html>
