@@ -16,7 +16,11 @@ const nextConfig: NextConfig = withPWA({
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ["shadcnblocks.com", "images.unsplash.com"],
+    // domains: ["shadcnblocks.com", "images.unsplash.com"],
+    remotePatterns: [
+      "https://shadcnblocks.com/**",
+      "https://images.unsplash.com/**",
+    ]
   },
 });
 
