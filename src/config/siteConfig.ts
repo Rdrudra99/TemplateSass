@@ -1,5 +1,5 @@
 const siteConfig = {
-  siteName: "Whyme || Content Generator Tool",
+  siteName: "Whyme",
   siteUrl: "https://www.whyme.tech/",
   siteDescription: `
    whyme is a modern, fast, and lightweight content Generator tool website that helps you generate content for your website, blog, or social media.
