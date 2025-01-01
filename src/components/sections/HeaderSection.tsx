@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -23,33 +24,16 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { navigationItems } from "@/config/header";
+import siteConfig from "@/config/siteConfig";
 
 export default function HeaderSection() {
-  const navigationItems = [
-    { title: "Home", href: "/", description: "" },
-    {
-      title: "Product",
-      description: "Managing a small business today is already tough.",
-      items: [
-        { title: "Reports", href: "/reports" },
-        { title: "Statistics", href: "/statistics" },
-        { title: "Dashboards", href: "/dashboards" },
-        { title: "Recordings", href: "/recordings" },
-      ],
-    },
-    {
-      title: "Company",
-      description: "Get to know us better.",
-      items: [
-        { title: "About us", href: "/about" },
-        { title: "Fundraising", href: "/fundraising" },
-        { title: "Investors", href: "/investors" },
-        { title: "Contact us", href: "/contact" },
-      ],
-    },
-  ];
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeSidebar = () => {
+    setIsOpen(false);
+  };
 
   return (
     <header className="w-full z-40 fixed top-0 left-0 bg-background">
@@ -62,7 +46,7 @@ export default function HeaderSection() {
                   {item.href ? (
                     <NavigationMenuLink href={item.href}>
                       <Button variant="ghost" asChild>
-                        <p >{item.title}</p>
+                        <p>{item.title}</p>
                       </Button>
                     </NavigationMenuLink>
                   ) : (
@@ -107,7 +91,9 @@ export default function HeaderSection() {
           </NavigationMenu>
         </div>
         <div className="flex lg:justify-center">
-          <p className="font-semibold">TWBlocks</p>
+          <p className="font-semibold">
+            {siteConfig?.siteName || "Your Site Name"}
+          </p>
         </div>
         <div className="flex justify-end w-full gap-4">
           <Button variant="ghost" className="hidden md:inline">
@@ -117,7 +103,7 @@ export default function HeaderSection() {
           <Button variant={"outline"}>Get started</Button>
         </div>
         <div className="flex w-12 shrink lg:hidden items-end justify-end">
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon">
                 <Menu className="size-4" />
@@ -148,6 +134,7 @@ export default function HeaderSection() {
                               key={subItem.title}
                               href={subItem.href}
                               className="block p-2 hover:bg-muted"
+                              onClick={closeSidebar}
                             >
                               {subItem.title}
                             </Link>
@@ -160,6 +147,7 @@ export default function HeaderSection() {
                       key={item.title}
                       href={item.href || "#"}
                       className="font-semibold"
+                      onClick={closeSidebar}
                     >
                       {item.title}
                     </Link>

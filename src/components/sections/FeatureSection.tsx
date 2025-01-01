@@ -106,7 +106,7 @@ export const features = [
  },
 ];
 
-export function FeatureSection() {
+export default function FeatureSection() {
  return (
   <section className="container mx-auto max-w-5xl overflow-hidden">
    <div className="text-center space-y-4 pb-6 md:pb-12 mx-auto">
