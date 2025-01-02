@@ -29,7 +29,7 @@ export default function HeroSection() {
         <h1 className="relative mx-auto mb-8 max-w-3xl text-center text-3xl font-semibold md:text-5xl lg:text-6xl md:leading-snug">
           <span className="flex flex-wrap justify-center items-center">
             {content.title.split(' ').map((word, index) => (
-              <span key={index} className={index === 2 ? 'opacity-50 mr-1' : 'mr-1'}>
+              <span key={index} className={index === 2 ? 'opacity-50 mr-1 text-primary' : 'mr-1'}>
                 {word}
               </span>
             ))}
