@@ -3,13 +3,13 @@
 export const aboutSectionContent = {
  ourStory: {
   title: "Our Story",
-  mainText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed alias repellendus perferendis earum facilis est soluta consequatur placeat hic aliquid exercitationem, ex molestias nam veniam distinctio maxime culpa magnam autem.",
-  additionalText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique dolore quas placeat expedita aliquam rerum tempore amet, sequi ipsa ad quam, adipisci exercitationem nihil, sapiente laborum minus doloribus consequuntur sed. Quo repudiandae nihil quas voluptates, aut beatae reiciendis aliquid perspiciatis quae explicabo inventore temporibus laborum, nostrum omnis quos excepturi dolorum reprehenderit vel labore eaque libero perferendis? Qui illo numquam beatae?",
+  mainText: "At Zoomster Hub, we started with a vision to simplify and streamline the way businesses manage their digital needs. Our goal was to create a platform that provides advanced tools and solutions to help businesses grow, scale, and stay ahead of the competition in a fast-paced digital world.",
+  additionalText: "From humble beginnings to becoming a leading platform in the digital space, we’ve always believed in the power of innovation and collaboration. Today, we continue to evolve with the needs of our clients, providing tailored solutions that enhance productivity, drive success, and help businesses thrive.",
  },
  ourWorkplace: {
   title: "Our Workplace",
-  mainText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quae vel rem tenetur illum aspernatur. Ea, facere soluta cumque laboriosam repudiandae quaerat inventore dolores saepe pariatur, adipisci atque voluptate doloribus!",
-  additionalText: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure aliquid laudantium minus distinctio exercitationem odio non nihil blanditiis quae, beatae assumenda ad reiciendis soluta dolorem. Natus repellendus quidem dolorum temporibus!",
+  mainText: "Zoomster Hub thrives on a culture of innovation, creativity, and collaboration. Our workplace is designed to foster an environment where employees can grow professionally, contribute fresh ideas, and work together to develop cutting-edge solutions for businesses across industries.",
+  additionalText: "We believe in the power of teamwork and continuous learning, encouraging our team members to bring their best ideas forward. At Zoomster Hub, everyone is an integral part of our mission to help businesses succeed in the digital era.",
  },
  images: [
   {

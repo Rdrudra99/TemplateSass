@@ -12,14 +12,14 @@ export default function VideoSection() {
       className="dark:hidden block"
       animationStyle="from-center"
       videoSrc="https://www.youtube.com/embed/tWc0x1LaCDk?si=Zz8tnYwzkZEpZ0cG"
-      thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+      thumbnailSrc="/video.png"
       thumbnailAlt="Hero Video"
      />
      <HeroVideoDialog
       className="hidden dark:block"
       animationStyle="from-center"
       videoSrc="https://www.youtube.com/embed/tWc0x1LaCDk?si=Zz8tnYwzkZEpZ0cG"
-      thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+      thumbnailSrc="/video.png"
       thumbnailAlt="Hero Video"
      />
     </div>

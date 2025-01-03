@@ -26,9 +26,9 @@ export type FooterData = {
 
 const footerData: FooterData = {
  logo: {
-  image: "https://shadcnblocks.com/images/block/block-1.svg",
+  image: "/logo.png",
   alt: "logo",
-  text: "Shadcnblocks",
+  text: "zoomsterhub",
  },
  description: "A collection of 100+ responsive HTML templates for your startup business or side project.",
  socialLinks: [

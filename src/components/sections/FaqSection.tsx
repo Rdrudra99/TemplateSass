@@ -3,7 +3,7 @@ import { faqContent } from "@/config/faq-content";
 
 export default function FAQSection() {
   return (
-    <section className="py-16 md:py-24 lg:py-32">
+    <section className="py-16 md:py-24 lg:py-32" id="faq">
       <div className="container max-w-4xl px-6 mx-auto">
         <div className="text-center">
           <Badge variant="default">{faqContent.badge}</Badge>

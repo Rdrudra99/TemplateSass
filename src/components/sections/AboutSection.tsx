@@ -5,7 +5,7 @@ export default function AboutSection() {
  const { ourStory, ourWorkplace, images } = aboutSectionContent;
 
  return (
-  <section className="py-16 md:py-24 lg:py-32">
+  <section className="py-16 md:py-24 lg:py-32" id='about'>
    <div className="container px-4 md:px-6 mx-auto">
     <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
      <div className="flex w-full flex-col gap-12 lg:w-1/2">

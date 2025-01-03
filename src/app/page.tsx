@@ -59,7 +59,9 @@ const TestimonialSection = dynamic(() => import("@/components/sections/Testimoni
 const VideoSection = dynamic(() => import("@/components/sections/VideoSection"), {
   loading: () => <Loading />
 });
-
+const ContactSection = dynamic(() => import("@/components/sections/ContactSection"), {
+  loading: () => <Loading />
+});
 export default function Home() {
   return (
     <>
@@ -73,6 +75,7 @@ export default function Home() {
         <FAQSection />
         <TeamSection />
         <PricingSection />
+        <ContactSection />
         <CallToActionSection />
       </Suspense>
     </>

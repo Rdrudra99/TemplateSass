@@ -14,7 +14,7 @@ import { pricingPlans } from "@/config/pricing"; // Import pricing data
 
 export default function PricingSection() {
   return (
-    <div className="w-full py-20 lg:py-40">
+    <div className="w-full py-20 lg:py-40" id="pricing">
       <div className="container mx-auto">
         <div className="flex text-center justify-center items-center gap-4 flex-col">
           <Badge>Pricing</Badge>

@@ -4,7 +4,7 @@ import { teamContent, TeamMember } from "@/config/team-content";
 
 export default function TeamSection() {
  return (
-  <section className="py-32">
+  <section className="py-32" id="team">
    <div className="container flex flex-col items-start text-left">
     <p className="semibold">{teamContent.hiring}</p>
     <h2 className="my-6 text-pretty text-2xl font-bold lg:text-4xl">{teamContent.title}</h2>

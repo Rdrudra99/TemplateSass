@@ -33,7 +33,7 @@ export default function HeroSection() {
                 {word}
               </span>
             ))}
-            <Globe className="mx-2 mb-1 inline-block h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10" />
+            <Zap className="mx-2 inline-block h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10" fill='#00000' />
           </span>
 
           {/* Annotations */}

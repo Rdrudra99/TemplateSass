@@ -167,7 +167,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, Search, MoveRight } from 'lucide-react'
+import { Menu, Search, MoveRight, Zap } from 'lucide-react'
 import { Logo } from '../common/logo'
 import { ThemeToggle } from '../common/theme-toggle'
 import { Button } from "@/components/ui/button"
@@ -175,6 +175,7 @@ import { Input } from "@/components/ui/input"
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -208,9 +209,12 @@ export default function HeaderSection() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 lg:px-8">
+      <div className="md:container flex h-16 max-w-screen-2xl items-center justify-between px-4 lg:px-8">
         <div className="flex items-center gap-4">
-          <Logo />
+          <Zap className="w-6 h-6 " fill='#00000' />
+          <span className='hidden font-bold lg:inline-block'>
+            {siteConfig?.siteName || "Your Site Name"}
+          </span>
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="flex gap-4">
               {navigationItems.map((item) => (
@@ -241,10 +245,12 @@ export default function HeaderSection() {
                             </div>
                             <div className="flex flex-col text-sm h-full justify-end">
                               {item.items.map((subItem) => (
-                                <Link href={subItem.href} key={subItem.title} legacyBehavior passHref>
+                                <Link href={subItem.href} key={subItem.title} target='_blank'>
                                   <NavigationMenuLink className="flex items-center justify-between hover:bg-muted py-2 px-4 rounded transition-colors">
                                     <span>{subItem.title}</span>
-                                    <MoveRight className="w-4 h-4 text-muted-foreground" />
+                                    <svg width="7" height="7" viewBox="0 0 6 6" className="ml-1">
+                                      <path fill="currentColor" d="M1.252 5.547l-.63-.63 3.16-3.161H1.383L1.39.891h3.887v3.89h-.87l.005-2.396-3.159 3.162z" />
+                                    </svg>
                                   </NavigationMenuLink>
                                 </Link>
                               ))}
@@ -266,7 +272,7 @@ export default function HeaderSection() {
             className="h-9 px-3 text-sm hidden lg:flex"
             asChild
           >
-            <Link href="/contact">Contact</Link>
+            <Link href="#footer">Contact</Link>
           </Button>
           <Button
             size="sm"
@@ -299,6 +305,9 @@ export default function HeaderSection() {
                   <SheetTitle>
                     {siteConfig?.siteName || "Your Site Name"}
                   </SheetTitle>
+                  <SheetDescription>
+                    { }
+                  </SheetDescription>
                 </div>
               </SheetHeader>
               <div className="flex flex-col gap-4">
@@ -313,11 +322,14 @@ export default function HeaderSection() {
                               <Link
                                 key={subItem.title}
                                 href={subItem.href}
+                                target='_blank'
                                 className="flex items-center justify-between py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                                 onClick={closeSidebar}
                               >
                                 {subItem.title}
-                                <MoveRight className="w-4 h-4" />
+                                <svg width="7" height="7" viewBox="0 0 6 6" className="ml-1">
+                                  <path fill="currentColor" d="M1.252 5.547l-.63-.63 3.16-3.161H1.383L1.39.891h3.887v3.89h-.87l.005-2.396-3.159 3.162z" />
+                                </svg>
                               </Link>
                             ))}
                           </div>
