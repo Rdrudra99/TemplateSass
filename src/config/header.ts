@@ -2,6 +2,9 @@
 
 export const navigationItems = [
  { title: "Home", href: "/", description: "" },
+ { title: "Features", href: "/features", description: "" },
+ { title: "Pricing", href: "/pricing", description: "" },
+ { title: "Blog", href: "/blog", description: "" },
  {
   title: "Product",
   description: "Managing a small business today is already tough.",
