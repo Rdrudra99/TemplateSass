@@ -279,7 +279,7 @@ export default function HeaderSection() {
             className="h-9 rounded-full px-3 text-sm"
             asChild
           >
-            <Link href="/get-started">Get Started</Link>
+            <Link href="/">Get Started</Link>
           </Button>
           <ThemeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
