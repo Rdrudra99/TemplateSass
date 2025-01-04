@@ -1,7 +1,7 @@
 import HeroVideoDialog from "../ui/hero-video-dialog";
 export default function VideoSection() {
  return (
-  <section className="">
+  <section>
    <div className="relative mx-auto container flex w-full items-center justify-center" style={{
     opacity: 1,
     willChange: "auto",

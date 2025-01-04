@@ -115,7 +115,7 @@ const Footer = () => {
   };
 
   return (
-    <section className="md:py-32 py-12">
+    <section className="py-16 md:py-24 lg:py-32">
       <div className="container mx-auto">
         <footer>
           <div className="flex flex-col items-center justify-between gap-10 text-center lg:flex-row lg:text-left">

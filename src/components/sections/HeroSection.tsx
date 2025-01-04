@@ -20,7 +20,7 @@ export default function HeroSection() {
   const content = heroSectionContent;
 
   return (
-    <section className="py-16 md:py-24 lg:py-32">
+    <section className="py-16">
       <div className="container relative mx-auto min-h-[500px] md:min-h-[550px] flex justify-center items-center flex-col px-4">
         {/* Background grid */}
         <div className="absolute inset-0 -z-10 mx-auto h-full w-full max-w-3xl bg-[linear-gradient(to_right,hsl(var(--muted))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--muted))_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_50%_100%_at_50%_50%,#000_60%,transparent_100%)]"></div>

@@ -1,7 +1,7 @@
 import { callToActionData } from "@/config/callToActionData";
 export default function CallToActionSection() {
  return (
-  <div className="container mx-auto">
+  <div className="container mx-auto py-16">
    <div className="flex items-center justify-center bg-[url('https://shadcnblocks.com/images/block/circles.svg')] bg-cover bg-center px-8 py-20 text-center md:p-20">
     <div className="mx-auto max-w-screen-md">
      <h1 className="mb-4 text-balance text-3xl font-semibold md:text-5xl">

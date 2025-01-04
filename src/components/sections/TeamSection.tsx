@@ -4,7 +4,7 @@ import { teamContent, TeamMember } from "@/config/team-content";
 
 export default function TeamSection() {
  return (
-  <section className="py-32" id="team">
+  <section className="py-16 md:py-24 lg:py-32" id="team">
    <div className="container flex flex-col items-start text-left">
     <p className="semibold">{teamContent.hiring}</p>
     <h2 className="my-6 text-pretty text-2xl font-bold lg:text-4xl">{teamContent.title}</h2>
@@ -15,7 +15,7 @@ export default function TeamSection() {
    <div className="container mt-16 grid gap-x-12 gap-y-8 lg:grid-cols-2">
     {teamContent.teamMembers.map((member: TeamMember, index: number) => (
      <div key={index} className="flex flex-col sm:flex-row">
-      <div className="mb-4 aspect-square w-full shrink-0 overflow-clip bg-accent sm:mb-0 sm:mr-5 sm:size-48">
+      <div className="mb-4 aspect-square w-full shrink-0 overflow-clip bg-accent sm:mb-0 sm:mr-5 sm:size-48  rounded-lg">
        <Image
         src={member.image.src}
         alt={member.image.alt}

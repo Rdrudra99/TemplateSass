@@ -23,7 +23,7 @@ const logos = [
 
 export default function LogoTracker() {
  return (
-  <section className="py-24 overflow-x-clip">
+  <section className="py-16 md:py-24 lg:py-32 overflow-x-clip">
    <div className="container mx-auto">
     <h3 className="text-center text-primary text-xl">
      Already Chosen By These Market Leaders

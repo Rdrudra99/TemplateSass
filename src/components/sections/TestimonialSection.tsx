@@ -10,7 +10,7 @@ export default function TestimonialSection() {
  const thirdColumn = testimonials.slice(6, 9);
 
  return (
-  <section className="py-24 bg-background">
+  <section className="py-16 md:py-24 lg:py-32 bg-background">
    <div className="container mx-auto px-4">
     <h2
      className="text-4xl md:text-5xl lg:text-6xl font-medium mt-6 text-center max-w-xl mx-auto text-foreground"

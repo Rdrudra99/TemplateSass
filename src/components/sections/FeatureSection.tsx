@@ -258,7 +258,7 @@ export const features = [
 
 export default function FeatureSection() {
  return (
-  <section className="container mx-auto max-w-5xl overflow-hidden" id="services">
+  <section className="container mx-auto max-w-5xl overflow-hidden py-16 md:py-24 lg:py-32" id="services">
    <div className="text-center space-y-4 pb-6 md:pb-12 mx-auto">
     <h2 className="text-sm text-primary font-mono font-medium tracking-wider uppercase">
      Features

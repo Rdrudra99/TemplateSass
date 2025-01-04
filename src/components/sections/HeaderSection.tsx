@@ -272,7 +272,7 @@ export default function HeaderSection() {
             className="h-9 px-3 text-sm hidden lg:flex"
             asChild
           >
-            <Link href="#footer">Contact</Link>
+            <Link href="#contact">Contact</Link>
           </Button>
           <Button
             size="sm"

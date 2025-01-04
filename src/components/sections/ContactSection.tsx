@@ -1,58 +1,155 @@
-import { Mail, MapPin, Phone } from "lucide-react";
-import { contactDetails } from '@/config/contactData';
+'use client'
 
-export default function ContactSection() {
+import React from 'react'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { formSchema, type FormData } from '@/lib/schema'
+import { Check, YoutubeIcon } from 'lucide-react'
+import { Toaster } from "@/components/ui/toaster"
+import { useToast } from '@/hooks/use-toast'
+import { InstagramLogoIcon } from '@radix-ui/react-icons'
+
+export default function BookDemoSection() {
+ const { toast } = useToast()
+ const {
+  register,
+  handleSubmit,
+  reset,
+  formState: { errors, isSubmitting },
+ } = useForm<FormData>({
+  resolver: zodResolver(formSchema),
+ })
+
+ const onSubmit = async (data: FormData) => {
+  const formData = new FormData();
+
+  Object.entries(data).forEach(([key, value]) => {
+   formData.append(key, value);
+  });
+
+  formData.append("access_key", "ac79758c-6137-4a96-aed7-d26d3a16e1f3");
+
+  try {
+   const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData
+   });
+
+   const responseData = await response.json();
+
+   if (responseData.success) {
+    toast({
+     title: `
+       🎉 Success!
+     `,
+     description: `We have received your message and will get back to you soon.`,
+     variant: "default",
+    })
+    reset();
+   } else {
+    throw new Error(responseData.message || "Something went wrong");
+   }
+  } catch (error) {
+   console.error("Submission error:", error);
+   toast({
+    title: "Error",
+    description: error instanceof Error ? error.message : "An error occurred. Please try again.",
+    variant: "destructive",
+   })
+  }
+ }
+
  return (
-  <section className="py-32">
-   <div className="container">
-    <div className="mb-14">
-     <span className="text-sm font-semibold">Reach Us</span>
-     <h1 className="mb-3 mt-1 text-balance text-3xl font-semibold md:text-4xl">
-      Speak with Our Friendly Team
-     </h1>
-     <p className="text-lg text-muted-foreground">
-      We'd love to assist you. Fill out the form or drop us an email.
-     </p>
+  <section className="relative py-32" id='contact'>
+   <div className="pointer-events-none absolute inset-x-0 -bottom-20 -top-20 bg-[radial-gradient(ellipse_35%_15%_at_40%_55%,hsl(var(--accent))_0%,transparent_100%)] lg:bg-[radial-gradient(ellipse_12%_20%_at_60%_45%,hsl(var(--accent))_0%,transparent_100%)]"></div>
+   <div className="pointer-events-none absolute inset-x-0 -bottom-20 -top-20 bg-[radial-gradient(ellipse_35%_20%_at_70%_75%,hsl(var(--accent))_0%,transparent_80%)] lg:bg-[radial-gradient(ellipse_15%_30%_at_70%_65%,hsl(var(--accent))_0%,transparent_80%)]"></div>
+   <div className="pointer-events-none absolute inset-x-0 -bottom-20 -top-20 bg-[radial-gradient(hsl(var(--accent-foreground)/0.1)_1px,transparent_1px)] [background-size:8px_8px] [mask-image:radial-gradient(ellipse_60%_60%_at_65%_50%,#000_0%,transparent_80%)]"></div>
+   <div className="container grid w-full grid-cols-1 gap-x-32 overflow-hidden lg:grid-cols-2">
+    <div className="w-full pb-10 md:space-y-10 md:pb-0">
+     <div className="space-y-4 md:max-w-[40rem]">
+      <h1 className="text-4xl font-medium lg:text-5xl">Book free demo now</h1>
+      <div className="text-muted-foreground md:text-base lg:text-lg lg:leading-7">
+       In non libero bibendum odio pellentesque ullamcorper. Aenean condimentum, dolor commodo pulvinar bibendum.
+      </div>
+     </div>
+     <div className="hidden md:block">
+      <div className="space-y-16 pb-20 lg:pb-0">
+       <div className="space-y-6">
+        <div className="mt-16 flex overflow-hidden">
+         <span className="relative flex shrink-0 overflow-hidden rounded-full size-11">
+          <img className="aspect-square h-full w-full" src="https://shadcnblocks.com/images/block/avatar-1.webp" alt="Avatar 1" />
+         </span>
+         <span className="relative flex shrink-0 overflow-hidden rounded-full -ml-4 size-11">
+          <img className="aspect-square h-full w-full" src="https://shadcnblocks.com/images/block/avatar-3.webp" alt="Avatar 2" />
+         </span>
+         <span className="relative flex shrink-0 overflow-hidden rounded-full -ml-4 size-11">
+          <img className="aspect-square h-full w-full" src="https://shadcnblocks.com/images/block/avatar-2.webp" alt="Avatar 3" />
+         </span>
+        </div>
+        <div className="space-y-4">
+         <p className="text-sm font-semibold">What you can expect:</p>
+         <div className="flex items-center space-x-2.5">
+          <Check className="size-5 shrink-0 text-muted-foreground" />
+          <p className="text-sm">Detailed product presentation tailored to you</p>
+         </div>
+         <div className="flex items-center space-x-2.5">
+          <Check className="size-5 shrink-0 text-muted-foreground" />
+          <p className="text-sm">Consulting on your messaging strategy</p>
+         </div>
+         <div className="flex items-center space-x-2.5">
+          <Check className="size-5 shrink-0 text-muted-foreground" />
+          <p className="text-sm">Answers to all the questions you have</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
     </div>
-    <div className="grid gap-10 md:grid-cols-3">
-     <div>
-      <span className="mb-3 flex size-12 flex-col items-center justify-center rounded-full bg-accent">
-       <Mail className="h-6 w-auto" />
-      </span>
-      <p className="mb-2 text-lg font-semibold">{contactDetails.email.label}</p>
-      <p className="mb-3 text-muted-foreground">
-       {contactDetails.email.description}
-      </p>
-      <a href={contactDetails.email.link} className="font-semibold hover:underline">
-       {contactDetails.email.value}
-      </a>
-     </div>
-     <div>
-      <span className="mb-3 flex size-12 flex-col items-center justify-center rounded-full bg-accent">
-       <MapPin className="h-6 w-auto" />
-      </span>
-      <p className="mb-2 text-lg font-semibold">{contactDetails.visit.label}</p>
-      <p className="mb-3 text-muted-foreground">
-       {contactDetails.visit.description}
-      </p>
-      <a href={contactDetails.visit.link} className="font-semibold hover:underline">
-       {contactDetails.visit.value}
-      </a>
-     </div>
-     <div>
-      <span className="mb-3 flex size-12 flex-col items-center justify-center rounded-full bg-accent">
-       <Phone className="h-6 w-auto" />
-      </span>
-      <p className="mb-2 text-lg font-semibold">{contactDetails.call.label}</p>
-      <p className="mb-3 text-muted-foreground">
-       {contactDetails.call.description}
-      </p>
-      <a href={contactDetails.call.link} className="font-semibold hover:underline">
-       {contactDetails.call.value}
-      </a>
+    <div className="flex w-full justify-center lg:mt-2.5">
+     <div className="relative flex w-full min-w-[20rem] max-w-[30rem] flex-col items-center overflow-visible md:min-w-[24rem]">
+      <form onSubmit={handleSubmit(onSubmit)} className="z-10 space-y-6 w-full">
+       <div className="w-full space-y-6 rounded-xl border border-border bg-background px-6 py-10 shadow-sm">
+        <div>
+         <Label htmlFor="name" className="mb-2.5 text-sm font-medium">Name</Label>
+         <Input id="name" {...register('name')} placeholder="Your name" />
+         {errors.name && (
+          <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
+         )}
+        </div>
+        <div>
+         <Label htmlFor="email" className="mb-2.5 text-sm font-medium">Email</Label>
+         <Input id="email" type="email" {...register('email')} placeholder="your@email.com" />
+         {errors.email && (
+          <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+         )}
+        </div>
+        <div>
+         <Label htmlFor="message" className="mb-2.5 text-sm font-medium">Message</Label>
+         <Textarea id="message" {...register('message')} placeholder="Your message" className="min-h-[100px]" />
+         {errors.message && (
+          <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
+         )}
+        </div>
+        <div className="flex w-full flex-col justify-end space-y-3 pt-2">
+         <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Book demo'}
+         </Button>
+         <div className="text-xs text-muted-foreground">
+          For more information about how we handle your personal information, please visit our{' '}
+          <a href="#" className="underline">privacy policy</a>.
+         </div>
+        </div>
+       </div>
+      </form>
      </div>
     </div>
    </div>
+   <Toaster />
   </section>
- );
+ )
 }
+
