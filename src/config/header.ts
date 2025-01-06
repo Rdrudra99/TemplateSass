@@ -5,22 +5,7 @@ export const navigationItems = [
   description: "Explore our homepage and discover what we offer."
  },
  {
-  title: "About Us",
-  href: "#about",
-  description: "Learn about our mission, values, and what drives us forward."
- },
- {
-  title: "FAQ",
-  href: "#faq",
-  description: "Find answers to commonly asked questions about our services."
- },
- {
-  title: "Pricing",
-  href: "#pricing",
-  description: "Explore our affordable pricing plans tailored to your needs."
- },
- {
-  title: "Our Umbrella",
+  title: "Company Umbrella",
   description: "Explore our diverse digital platforms and offerings.",
   items: [
    {
@@ -41,4 +26,22 @@ export const navigationItems = [
    },
   ],
  },
+ {
+  title: "Our Service ",
+  href: "#service",
+  description: `
+  Explore our services and discover how we can help you grow your business.`
+ },
+ {
+  title: "Our Team",
+  href: "#team",
+  description: `
+  Meet our team of experts and learn more about the people behind Zoomster.`
+ },
+ {
+  title: "Contact Us",
+  href: "#contact",
+  description: `
+  Get in touch with us and let us know how we can help you.`
+ }
 ];

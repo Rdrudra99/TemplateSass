@@ -1,11 +1,23 @@
 export const footerLinks = [
  {
+  title: "Terms and Conditions",
+  href: "/terms", // Replace with actual route
+ },
+ {
   title: "Privacy Policy",
   href: "/privacypolicy", // Replace with actual route
  },
  {
-  title: "Terms and Conditions",
-  href: "/terms", // Replace with actual route
+  title: "Disclaimer",
+  href: "/disclaimer", // Replace with actual route
+ },
+ {
+  title: "Feedback",
+  href: "#feedback", // Replace with actual route
+ },
+ {
+  title: "About Director",
+  href: "/about", // Replace with actual route
  },
 ];
 

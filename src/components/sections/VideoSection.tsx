@@ -12,14 +12,14 @@ export default function VideoSection() {
       className="dark:hidden block"
       animationStyle="from-center"
       videoSrc="https://www.youtube.com/embed/tWc0x1LaCDk?si=Zz8tnYwzkZEpZ0cG"
-      thumbnailSrc="/video.png"
+      thumbnailSrc="https://saas-magicui.vercel.app/_next/image?url=%2Fdashboard.png&w=1920&q=75"
       thumbnailAlt="Hero Video"
      />
      <HeroVideoDialog
       className="hidden dark:block"
       animationStyle="from-center"
       videoSrc="https://www.youtube.com/embed/tWc0x1LaCDk?si=Zz8tnYwzkZEpZ0cG"
-      thumbnailSrc="/video.png"
+      thumbnailSrc="https://saas-magicui.vercel.app/_next/image?url=%2Fdashboard.png&w=1920&q=75"
       thumbnailAlt="Hero Video"
      />
     </div>

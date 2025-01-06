@@ -35,6 +35,9 @@ const VideoSection = dynamic(() => import("@/components/sections/VideoSection"),
 const ContactSection = dynamic(() => import("@/components/sections/ContactSection"), {
   loading: () => <Loading />
 });
+const ServiceSection = dynamic(() => import("@/components/sections/ServiceSection"), {
+  loading: () => <Loading />
+});
 export default function Home() {
   return (
     <>
@@ -43,6 +46,7 @@ export default function Home() {
         <VideoSection />
         <LogoTracker />
         <FeatureSection />
+        <ServiceSection />
         <AboutSection />
         <TestimonialSection />
         <FAQSection />

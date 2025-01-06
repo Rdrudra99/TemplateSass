@@ -1,12 +1,14 @@
 export const heroSectionContent = {
- title: "Supercharge Your Brand with Zoomster Hub",
- subtitle: "Manage, scale, and innovate your business across film, events, e-commerce, and digital marketing with ease.",
- ctaButton: "Get Started Now",
- poweredBy: "Powered by Innovation and Expertise",
- annotations: [
-  { text: "Comprehensive Solutions", icon: "lightbulb" },
-  { text: "Trusted by Industry Leaders", icon: "shield-check" },
-  { text: "Creative Excellence", icon: "palette" },
-  { text: "Unmatched Speed", icon: "speedometer" }
- ]
+  title: `
+  Expert For Your Growing Business!
+ `,
+  subtitle: `Zoomster Hub OPC Private Limited is a one-stop solution for entertainment, career growth, business development, websites, applications, pre to post-production, and event or celebrity management, offering seamless OTT technology and exclusive content in 193 countries`,
+  ctaButton: "Get Started Now",
+  poweredBy: `Powered by Zoomster Hub OPC Private Limited`,
+  annotations: [
+    { text: "Entertainment & Career Growth", icon: "star" },
+    { text: "Business Development Experts", icon: "briefcase" },
+    { text: "Cutting-Edge OTT Technology", icon: "tv" },
+    { text: "Global Reach in 193 Countries", icon: "globe" }
+  ]
 };

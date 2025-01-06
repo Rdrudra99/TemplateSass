@@ -23,13 +23,11 @@ export default function HeroSection() {
     <section className="py-16">
       <div className="container relative mx-auto min-h-[500px] md:min-h-[550px] flex justify-center items-center flex-col px-4">
         {/* Background grid */}
-        <div className="absolute inset-0 -z-10 mx-auto h-full w-full max-w-3xl bg-[linear-gradient(to_right,hsl(var(--muted))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--muted))_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_50%_100%_at_50%_50%,#000_60%,transparent_100%)]"></div>
-
         {/* Heading */}
-        <h1 className="relative mx-auto mb-8 max-w-3xl text-center text-3xl font-semibold md:text-5xl lg:text-6xl md:leading-snug">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold container mx-auto text-center mt-6 relative z-10">
           <span className="flex flex-wrap justify-center items-center">
             {content.title.split(' ').map((word, index) => (
-              <span key={index} className={index === 2 ? 'opacity-50 mr-1 text-primary' : 'mr-1'}>
+              <span key={index} className={index === 2 ? ' mr-1 text-primary' : 'mr-1'}>
                 {word}
               </span>
             ))}
@@ -53,7 +51,7 @@ export default function HeroSection() {
         </h1>
 
         {/* Subheading */}
-        <p className="mx-auto mb-10 max-w-screen-md text-center font-medium text-muted-foreground text-lg md:text-xl px-4">
+        <p className="text-center mt-6 text-base md:text-xl text-muted-foreground dark:text-muted max-w-3xl mx-auto relative z-10">
           {content.subtitle}
         </p>
 

@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -8,12 +7,13 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { formSchema, type FormData } from '@/lib/schema'
-import { Check, YoutubeIcon } from 'lucide-react'
+import { MapPin, Mail, Phone, YoutubeIcon } from 'lucide-react'
 import { Toaster } from "@/components/ui/toaster"
 import { useToast } from '@/hooks/use-toast'
 import { InstagramLogoIcon } from '@radix-ui/react-icons'
+import Link from 'next/link'
 
-export default function BookDemoSection() {
+export default function ContactUsSection() {
   const { toast } = useToast()
   const {
     register,
@@ -71,39 +71,52 @@ export default function BookDemoSection() {
       <div className="container grid w-full grid-cols-1 gap-x-32 overflow-hidden lg:grid-cols-2">
         <div className="w-full pb-10 md:space-y-10 md:pb-0">
           <div className="space-y-4 md:max-w-[40rem]">
-            <h1 className="text-4xl font-medium lg:text-5xl">Book free demo now</h1>
+            <h1 className="text-4xl font-medium lg:text-5xl">Contact Us</h1>
             <div className="text-muted-foreground md:text-base lg:text-lg lg:leading-7">
-              In non libero bibendum odio pellentesque ullamcorper. Aenean condimentum, dolor commodo pulvinar bibendum.
+              Get in touch with us for any inquiries or support. We're here to help!
             </div>
           </div>
-          <div className="hidden md:block">
-            <div className="space-y-16 pb-20 lg:pb-0">
-              <div className="space-y-6">
-                <div className="mt-16 flex overflow-hidden">
-                  <span className="relative flex shrink-0 overflow-hidden rounded-full size-11">
-                    <img className="aspect-square h-full w-full" src="https://shadcnblocks.com/images/block/avatar-1.webp" alt="Avatar 1" />
-                  </span>
-                  <span className="relative flex shrink-0 overflow-hidden rounded-full -ml-4 size-11">
-                    <img className="aspect-square h-full w-full" src="https://shadcnblocks.com/images/block/avatar-3.webp" alt="Avatar 2" />
-                  </span>
-                  <span className="relative flex shrink-0 overflow-hidden rounded-full -ml-4 size-11">
-                    <img className="aspect-square h-full w-full" src="https://shadcnblocks.com/images/block/avatar-2.webp" alt="Avatar 3" />
-                  </span>
+          <div className="mt-8 space-y-8">
+            <div className="space-y-4">
+              <h2 className="text-2xl font-medium">Our Offices</h2>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {[
+                  { location: "Telangana", address: "Gachibowli, Hyderabad, 500032" },
+                  { location: "Tamil Nadu", address: "Anna Nagar, Chennai, 600040" },
+                  { location: "Kerala", address: "MG Road, Kochi, 682016" },
+                  { location: "Gujarat", address: "Gandhinagar, near highway, Ahmedabad, 382002" },
+                  { location: "Haryana", address: "Huda City Centre, Gurugram, 122009" },
+                  { location: "Dubai", address: "Downtown Standard Chartered Tower, Level 5, Emaar Square, Dubai, UAE, 500001" },
+                  { location: "South Korea", address: "Busan, Gangnam, 06000" },
+                ].map((office, index) => (
+                  <div key={index} className="flex items-start space-x-2">
+                    <MapPin className="mt-1 h-5 w-5 shrink-0 text-muted-foreground" />
+                    <div>
+                      <p className="font-medium">{office.location}</p>
+                      <p className="text-sm text-muted-foreground">{office.address}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h2 className="text-2xl font-medium">Contact Information</h2>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2">
+                  <Mail className="h-5 w-5 text-muted-foreground" />
+                  <a href="mailto:info@zoomsterhub.com" className="text-sm hover:underline">info@zoomsterhub.com</a>
                 </div>
-                <div className="space-y-4">
-                  <p className="text-sm font-semibold">What you can expect:</p>
-                  <div className="flex items-center space-x-2.5">
-                    <Check className="size-5 shrink-0 text-muted-foreground" />
-                    <p className="text-sm">Detailed product presentation tailored to you</p>
-                  </div>
-                  <div className="flex items-center space-x-2.5">
-                    <Check className="size-5 shrink-0 text-muted-foreground" />
-                    <p className="text-sm">Consulting on your messaging strategy</p>
-                  </div>
-                  <div className="flex items-center space-x-2.5">
-                    <Check className="size-5 shrink-0 text-muted-foreground" />
-                    <p className="text-sm">Answers to all the questions you have</p>
-                  </div>
+                <div className="flex items-center space-x-2">
+                  <Mail className="h-5 w-5 text-muted-foreground" />
+                  <a href="mailto:support@zoomsterhub.com" className="text-sm hover:underline">support@zoomsterhub.com</a>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Phone className="h-5 w-5 text-muted-foreground" />
+                  <a href="tel:+918977907739" className="text-sm hover:underline">+91-8977907739</a>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Phone className="h-5 w-5 text-muted-foreground" />
+                  <a href="tel:+917702827739" className="text-sm hover:underline">+91-7702827739</a>
                 </div>
               </div>
             </div>
@@ -136,11 +149,11 @@ export default function BookDemoSection() {
                 </div>
                 <div className="flex w-full flex-col justify-end space-y-3 pt-2">
                   <Button type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? 'Submitting...' : 'Book demo'}
+                    {isSubmitting ? 'Submitting...' : 'Send Message'}
                   </Button>
                   <div className="text-xs text-muted-foreground">
-                    For more information about how we handle your personal information, please visit our{' '}
-                    <a href="#" className="underline">privacy policy</a>.
+                    By submitting this form, you agree to our{' '}
+                    <Link href="/privacypolicy" className="underline">privacy policy</Link>.
                   </div>
                 </div>
               </div>
