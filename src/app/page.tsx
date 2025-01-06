@@ -38,6 +38,9 @@ const ContactSection = dynamic(() => import("@/components/sections/ContactSectio
 const ServiceSection = dynamic(() => import("@/components/sections/ServiceSection"), {
   loading: () => <Loading />
 });
+const StatesSection = dynamic(() => import("@/components/sections/StatesSection"), {
+  loading: () => <Loading />
+});
 export default function Home() {
   return (
     <>
@@ -49,6 +52,7 @@ export default function Home() {
         <ServiceSection />
         <AboutSection />
         <TestimonialSection />
+        <StatesSection />
         <FAQSection />
         <TeamSection />
         <PricingSection />

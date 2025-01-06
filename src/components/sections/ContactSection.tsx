@@ -10,7 +10,6 @@ import { formSchema, type FormData } from '@/lib/schema'
 import { MapPin, Mail, Phone, YoutubeIcon } from 'lucide-react'
 import { Toaster } from "@/components/ui/toaster"
 import { useToast } from '@/hooks/use-toast'
-import { InstagramLogoIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 
 export default function ContactUsSection() {
@@ -31,7 +30,7 @@ export default function ContactUsSection() {
       formData.append(key, value);
     });
 
-    formData.append("access_key", "ac79758c-6137-4a96-aed7-d26d3a16e1f3");
+    formData.append("access_key", "d39ca24f-66d7-4fa8-a2c4-e6f7fba25610");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
