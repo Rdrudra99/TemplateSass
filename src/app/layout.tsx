@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteConfig.seo.openGraph.title,
     description: siteConfig.seo.openGraph.description,
-    images: siteConfig.seo.openGraph.images,
+    images: "/opengraph-image.png",
   },
 };
 
