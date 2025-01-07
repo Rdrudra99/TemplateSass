@@ -13,7 +13,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteConfig.seo.openGraph.title,
     description: siteConfig.seo.openGraph.description,
-    images: "/opengraph-image.png",
+    type: "website",
+    locale: "en_US",
+    url: "https://zoomsterhub.com",
+    images: [
+      {
+        url: "./opengraph-image.png",
+        alt: "Zoomsterhub",
+      },
+    ],
   },
 };
 
