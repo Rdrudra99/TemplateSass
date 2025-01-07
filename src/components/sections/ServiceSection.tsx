@@ -61,7 +61,7 @@ export default function ServiceSection() {
  ));
 
  return (
-  <div className="container mx-auto py-16">
+  <div className="container mx-auto py-16" id="service">
    <div className="px-8">
     <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-primary">
      {service?.title}

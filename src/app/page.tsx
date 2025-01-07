@@ -48,8 +48,8 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
         <VideoSection />
         <LogoTracker />
-        <FeatureSection />
         <ServiceSection />
+        <FeatureSection />
         <AboutSection />
         <TestimonialSection />
         <StatesSection />

@@ -16,8 +16,8 @@ export const footerLinks = [
   href: "#feedback", // Replace with actual route
  },
  {
-  title: "About Director",
-  href: "/about", // Replace with actual route
+  title: "Cookies",
+  href: "", // Replace with actual route
  },
 ];
 

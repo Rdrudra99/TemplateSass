@@ -25,7 +25,7 @@ export default function FooterSection() {
       <div className="container mx-auto">
         <div className="py-12 flex flex-col justify-start items-center">
           <h2 className="font-bold tracking-tighter text-3xl">
-            Zoomsterhub.com
+            Zoomster Hub
           </h2>
           <ul className="mt-6 flex items-center gap-4 flex-wrap">
             {footerLinks.map(({ title, href }: any) => (
@@ -48,12 +48,11 @@ export default function FooterSection() {
           {/* Copyright */}
           <span className="text-muted-foreground">
             &copy; {new Date().getFullYear()}{" "}
+            All rights reserved by
             <Link href="/" target="_blank">
               {siteConfig?.siteName || "Zoomsterhub.com"}
             </Link>
-            . All rights reserved.
           </span>
-
           <div className="flex items-center gap-5 text-muted-foreground">
             {socialLinks.map(({ icon, href }: any) => (
               <Link href={href} target="_blank" key={icon}>
