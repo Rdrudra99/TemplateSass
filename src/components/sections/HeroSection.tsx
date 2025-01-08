@@ -1,5 +1,8 @@
 import { Zap, Lock, Star, CircleCheck, Globe } from 'lucide-react';
-import { heroSectionContent } from '@/config/hero';
+import { heroSectionContent, people } from '@/config/hero';
+import { AnimatedTooltip } from '../common/animated-tooltip';
+import AnimatedShinyText from '../ui/animated-shiny-text';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 
 const getIcon = (iconName: string) => {
   switch (iconName) {
@@ -23,8 +26,12 @@ export default function HeroSection() {
     <section className="py-16">
       <div className="container relative mx-auto min-h-[500px] md:min-h-[550px] flex justify-center items-center flex-col px-4">
         {/* Background grid */}
+        <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+          <span>✨ Powered by Zoomster Hub OPC Private Limited</span>
+          <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+        </AnimatedShinyText>
         {/* Heading */}
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold container mx-auto text-center mt-6 relative z-10">
+        <h1 className="text-4xl md:text-5xl tracking-wide lg:text-7xl font-semibold container mx-auto text-center mt-6 relative z-10">
           <span className="flex flex-wrap justify-center items-center">
             {content.title.split(' ').map((word, index) => (
               <span key={index} className={index === 2 ? ' mr-1 text-primary' : 'mr-1'}>
@@ -49,20 +56,12 @@ export default function HeroSection() {
             </div>
           ))}
         </h1>
-
         {/* Subheading */}
-        <p className="text-center mt-6 text-base md:text-xl text-muted-foreground dark:text-muted max-w-3xl mx-auto relative z-10">
+        <p className="text-center mt-6 text-base md:text-base text-muted-foreground dark:text-muted max-w-3xl mx-auto relative z-10">
           {content.subtitle}
         </p>
-
-        {/* Buttons */}
-        <div className="flex flex-col items-center justify-center gap-3 pb-12 pt-3">
-          <button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8">
-            {content.ctaButton}
-          </button>
-          <div className="text-sm text-muted-foreground md:text-balance">
-            {content.poweredBy}
-          </div>
+        <div className="flex flex-row items-center justify-center mb-10 w-full pt-4">
+          <AnimatedTooltip items={people} />
         </div>
       </div>
     </section>

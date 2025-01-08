@@ -6,6 +6,15 @@ import HeaderSection from "@/components/sections/HeaderSection";
 import FooterSection from "@/components/sections/FooterSection";
 import siteConfig from "@/config/siteConfig";
 import { ThemeProvider } from "next-themes";
+
+import { Open_Sans } from 'next/font/google'
+
+const OpenSans = Open_Sans({
+  weight: '400',
+  subsets: ['latin'],
+})
+
+
 export const metadata: Metadata = {
   title: siteConfig.seo.defaultTitle,
   description: siteConfig.seo.defaultDescription,
@@ -36,6 +45,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <meta name="theme-color" content="#e0c8fd" />
+
         {/* add keywords here  */}
         <meta name="keywords" content="whyme" />
         <meta property="og:title" content="Nextjs App" />
@@ -49,7 +59,7 @@ export default function RootLayout({
         <meta name="twitter:image" content="https://i.imgur.com/Z3bMJXy.jpg" />
       </head>
       <body
-        className={classNames("antialiased", {
+        className={classNames(`${OpenSans.className} , antialiased`, {
           "debug-screens": process.env.NODE_ENV === "development",
         })}
         suppressHydrationWarning

@@ -1,10 +1,5 @@
 export const navigationItems = [
  {
-  title: "Home",
-  href: "/",
-  description: "Explore our homepage and discover what we offer."
- },
- {
   title: "Company Umbrella",
   description: "Explore our diverse digital platforms and offerings.",
   items: [
@@ -43,5 +38,10 @@ export const navigationItems = [
   href: "#contact",
   description: `
   Get in touch with us and let us know how we can help you.`
+ },
+ {
+  title: "About Director",
+  href: "/about",
+  description: ""
  }
 ];

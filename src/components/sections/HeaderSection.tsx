@@ -31,13 +31,32 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { ThemeToggle } from '../common/theme-toggle'
-
+import { useRouter, usePathname } from 'next/navigation'
+import { useScrollToHash } from '@/hooks/useScrollToHash'
 
 
 export default function HeaderSection() {
   const [isSearchExpanded, setIsSearchExpanded] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
+  useScrollToHash()
 
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    if (href.startsWith('#')) {
+      if (pathname !== '/') {
+        // If we're not on the home page, navigate to home page with the hash
+        router.push('/' + href)
+      } else {
+        // If we're already on the home page, just update the hash
+        router.push(href)
+      }
+    } else {
+      // For non-hash links, use normal navigation
+      router.push(href)
+    }
+  }
   const closeSidebar = () => {
     setIsOpen(false)
   }
@@ -47,15 +66,15 @@ export default function HeaderSection() {
       <div className="md:container flex h-16 max-w-screen-2xl items-center justify-between px-4 lg:px-8">
         <div className="flex items-center gap-4">
           <Zap className="w-6 h-6 " fill='#00000' />
-          <span className='hidden font-bold lg:inline-block'>
+          <Link href="/" className='hidden font-bold lg:inline-block'>
             {siteConfig?.siteName || "Your Site Name"}
-          </span>
+          </Link>
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="flex gap-4">
               {navigationItems.map((item) => (
                 <NavigationMenuItem key={item.title}>
                   {item.href ? (
-                    <Link href={item.href} legacyBehavior passHref>
+                    <Link href={item.href} onClick={(e) => handleNavigation(e, `${item.href}`)}>
                       <NavigationMenuLink className=" flex justify-center items-center font-medium text-sm text-muted-foreground transition-colors hover:text-foreground">
                         {item.title}
                         <svg width="7" height="7" viewBox="0 0 6 6" className="ml-1">
@@ -176,7 +195,10 @@ export default function HeaderSection() {
                       key={item.title}
                       href={item.href || "#"}
                       className="text-base font-medium py-2"
-                      onClick={closeSidebar}
+                      onClick={(e) => {
+                        closeSidebar();
+                        handleNavigation(e, `${item.href}`);
+                      }}
                     >
                       {item.title}
                     </Link>
